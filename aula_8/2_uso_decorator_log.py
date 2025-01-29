@@ -1,6 +1,8 @@
 from utils_log import log_decorator
 from simple_decorator import simple_decorator
+from timer_decorator import timer_decorator
 
+@timer_decorator
 @log_decorator
 @simple_decorator
 def somar(x, y):
