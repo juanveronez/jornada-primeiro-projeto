@@ -1,7 +1,9 @@
 import pandas as pd
 import os
 import glob
+from utils_log import log_decorator
 
+@log_decorator
 def extract_json_folder(folder_path: str) -> pd.DataFrame:
   # glob get all files that matchs with pathname pattern
   # path join join two (or more) path names (for exemple: data, *.json = data/*.json)
@@ -11,9 +13,11 @@ def extract_json_folder(folder_path: str) -> pd.DataFrame:
   df_total = pd.concat(df_list, ignore_index=True)
   return df_total
 
+@log_decorator
 def calculate_total_sales_kpi(df: pd.DataFrame) -> pd.Series:
   return df['Quantidade'] * df['Venda']
 
+@log_decorator
 def load_df(df: pd.DataFrame, folder: str, load_format: list[str] = ['csv']):
   try:
     os.mkdir(folder)
@@ -25,6 +29,7 @@ def load_df(df: pd.DataFrame, folder: str, load_format: list[str] = ['csv']):
   if 'parquet' in load_format:
     df.to_parquet(os.path.join(folder, 'data.parquet'), index=False)
 
+@log_decorator
 def pipeline_sales_etl(input_folder: str, output_folder: str, load_format: list[str]):
   df = extract_json_folder(input_folder)
   df['Total'] = calculate_total_sales_kpi(df)

@@ -1,0 +1,44 @@
+2025-01-29T13:45:08.530645-0300 INFO Chamando função 'pipeline_sales_etl' com args () e kwargs {'input_folder': 'data', 'output_folder': 'processed', 'load_format': ['csv']} utils_log.py
+2025-01-29T13:45:08.530703-0300 INFO Chamando função 'extract_json_folder' com args ('data',) e kwargs {} utils_log.py
+2025-01-29T13:45:08.543796-0300 INFO Função 'extract_json_folder' retornou             Produto    Categoria  Quantidade  Venda        Data
+0    Notebook Gamer  Eletrônicos           2   1500  2023-01-17
+1     Mouse Sem Fio  Eletrônicos          14     30  2023-01-17
+2  Teclado Mecânico  Eletrônicos           2    100  2023-01-17
+3    Notebook Gamer  Eletrônicos           7   1500  2023-01-16
+4     Mouse Sem Fio  Eletrônicos          10     30  2023-01-16
+5  Teclado Mecânico  Eletrônicos           3    100  2023-01-16
+6    Notebook Gamer  Eletrônicos           3   1500  2023-01-15
+7     Mouse Sem Fio  Eletrônicos          10     30  2023-01-15
+8  Teclado Mecânico  Eletrônicos           5    100  2023-01-15 utils_log.py
+2025-01-29T13:45:08.544980-0300 INFO Chamando função 'calculate_total_sales_kpi' com args (            Produto    Categoria  Quantidade  Venda        Data
+0    Notebook Gamer  Eletrônicos           2   1500  2023-01-17
+1     Mouse Sem Fio  Eletrônicos          14     30  2023-01-17
+2  Teclado Mecânico  Eletrônicos           2    100  2023-01-17
+3    Notebook Gamer  Eletrônicos           7   1500  2023-01-16
+4     Mouse Sem Fio  Eletrônicos          10     30  2023-01-16
+5  Teclado Mecânico  Eletrônicos           3    100  2023-01-16
+6    Notebook Gamer  Eletrônicos           3   1500  2023-01-15
+7     Mouse Sem Fio  Eletrônicos          10     30  2023-01-15
+8  Teclado Mecânico  Eletrônicos           5    100  2023-01-15,) e kwargs {} utils_log.py
+2025-01-29T13:45:08.545129-0300 INFO Função 'calculate_total_sales_kpi' retornou 0     3000
+1      420
+2      200
+3    10500
+4      300
+5      300
+6     4500
+7      300
+8      500
+dtype: int64 utils_log.py
+2025-01-29T13:45:08.546452-0300 INFO Chamando função 'load_df' com args (            Produto    Categoria  Quantidade  Venda        Data  Total
+0    Notebook Gamer  Eletrônicos           2   1500  2023-01-17   3000
+1     Mouse Sem Fio  Eletrônicos          14     30  2023-01-17    420
+2  Teclado Mecânico  Eletrônicos           2    100  2023-01-17    200
+3    Notebook Gamer  Eletrônicos           7   1500  2023-01-16  10500
+4     Mouse Sem Fio  Eletrônicos          10     30  2023-01-16    300
+5  Teclado Mecânico  Eletrônicos           3    100  2023-01-16    300
+6    Notebook Gamer  Eletrônicos           3   1500  2023-01-15   4500
+7     Mouse Sem Fio  Eletrônicos          10     30  2023-01-15    300
+8  Teclado Mecânico  Eletrônicos           5    100  2023-01-15    500, 'processed', ['csv']) e kwargs {} utils_log.py
+2025-01-29T13:45:08.548475-0300 INFO Função 'load_df' retornou None utils_log.py
+2025-01-29T13:45:08.548507-0300 INFO Função 'pipeline_sales_etl' retornou None utils_log.py
