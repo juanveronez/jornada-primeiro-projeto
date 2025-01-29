@@ -32,6 +32,7 @@ def somar(x, y):
     logger.critical("Os valores digitados não são validos.")
 
 
-somar(2, 3)
-somar(2, '3')
-somar(10, 15)
+if __name__ == "__main__":
+  somar(2, 3)
+  somar(2, '3')
+  somar(10, 15)
