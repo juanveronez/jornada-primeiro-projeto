@@ -51,3 +51,41 @@ Assim como podemos fazer com que uma classe herde outra classe, podemos fazer co
 Com isso teremos comportamentos customizados e fluxos padrões independente de qual classe expecífica for usada. Um exemplo disso são classes relacionadas com Bancos de Dados. Mesmo tendo muitas opções e formas de conexão podemos criar um Database genérico e sua forma de conexão, e outros métodos podem variar, mas de uma forma que não seja necessário nenhum conhecimento de quem apenas quer usar a classe Database.
 
 Um exemplo disso pode ser encontrado nos arquivos em `3_encapsulamento`
+
+## Polimorfismo
+
+Conceito que é usado de forma teórica dentro de OOP para termos classes que tem uma mesma base abstrata e variam seus comportamentos internos dependendo da especificidade de cada objeto, ou do caso que deve será aplicado.
+
+Para casos desse tipo é comum termos uma classe abstrata base, que não terá a implemtação dos métodos e atributos, mas deixará claro o que deve ser implementado para que uma classe "filha" possa herdar a classe abstrata.
+
+Então como teremos diferentes funções com essas mesmas propriedades, mas comportamentos diferentes dependendo do contexto aplicado para a classe, podemos entender como um comportamento polimórfico.
+
+Exemplo de classe abstrata:
+
+```py
+from abc import ABC, abstractmethod
+
+class AbstractDataSource(ABC):
+    @abstractmethod
+    def start(self):
+        raise NotImplementedError("Método não implementado")
+
+    @abstractmethod
+    def get_data(self):
+        raise NotImplementedError("Método não implementado")
+
+    @abstractmethod
+    def transform_data_to_df(self):
+        raise NotImplementedError("Método não implementado")
+
+    @abstractmethod
+    def save_data(self):
+        raise NotImplementedError("Método não implementado")
+
+    def hello_world(self):
+        print('Hello World')
+```
+
+A classe ABC é uma classe própria do Python usada para criação de classes abstratas.
+
+Mais exemplos podem ser encontrados em `4_heranca_e_polimorfismo`
